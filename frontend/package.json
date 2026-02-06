@@ -12,7 +12,10 @@
     "@capacitor/android": "^8.0.2",
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
+    "@capacitor/haptics": "^8.0.0",
     "@capacitor/splash-screen": "latest",
+    "@tailwindcss/postcss": "^4.1.18",
+    "capacitor-voice-recorder": "^7.0.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
@@ -22,8 +25,11 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "autoprefixer": "^10.4.24",
     "eslint": "latest",
     "eslint-config-next": "latest",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.18",
     "typescript": "latest"
   }
 }

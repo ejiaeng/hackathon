@@ -1,3 +1,0 @@
-module.exports=[77451,a=>{a.n(a.i(44210))},45232,a=>{a.n(a.i(28613))},58260,a=>{a.n(a.i(12070))},37440,a=>{a.n(a.i(90307))},83808,a=>{"use strict";var b=a.i(18332);function c(){return(0,b.jsxs)("main",{style:{padding:"2rem",textAlign:"center"},children:[(0,b.jsx)("h1",{children:"Welcome to the Hackathon App"}),(0,b.jsx)("p",{children:"Frontend running on Next.js + Capacitor"})]})}a.s(["default",()=>c])}];
-
-//# sourceMappingURL=frontend_2a667e27._.js.map
