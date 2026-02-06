@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@capacitor/core": "latest",
+    "@capacitor/android": "^8.0.2",
     "@capacitor/camera": "latest",
+    "@capacitor/core": "latest",
     "@capacitor/splash-screen": "latest",
-    "@capacitor/ios": "latest",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest"
@@ -22,8 +22,8 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "typescript": "latest",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    "typescript": "latest"
   }
 }
