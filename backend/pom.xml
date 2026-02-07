@@ -38,6 +38,12 @@
             <artifactId>client-sdk</artifactId>
             <version>1.42.0</version>
         </dependency>
+        <!-- Azure OpenAI -->
+        <dependency>
+            <groupId>com.azure</groupId>
+            <artifactId>azure-ai-openai</artifactId>
+            <version>1.0.0-beta.8</version>
+        </dependency>
 	</dependencies>
 
 	<build>
