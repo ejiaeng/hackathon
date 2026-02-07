@@ -3,7 +3,7 @@
   "appName": "hackathon",
   "webDir": "out",
   "server": {
-    "allowNavigation": ["10.0.2.2"],
+    "allowNavigation": ["10.0.2.2", "10.75.195.44"],
     "cleartext": true
   },
   "plugins": {

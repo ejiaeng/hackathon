@@ -65,41 +65,31 @@ export default function MultiInputCapture() {
 
       if (image.base64String) {
         console.log('📤 APP: Sending frame to backend...');
-        await sendPhoto(image.base64String);
-      }
-    } catch (e) {
-      console.error('❌ Camera/Upload Error:', e);
-      // If we hit a "rendernode" related crash, we might want to signal it
-      setStatus('Error: Camera not responding');
-    }
-  };
-
-  const sendPhoto = async (base64: string) => {
-    try {
-      const formData = new FormData();
-      formData.append('infoLevel', infoLevel);
-      const blob = await fetch(`data:image/jpeg;base64,${base64}`).then(res => res.blob());
-      formData.append('image', blob, 'stream.jpg');
-      // Dummy audio to satisfy backend requirement for now
-      formData.append('audio', new Blob([''], { type: 'audio/aac' }), 'empty.aac');
-
-      const response = await fetch(getApiUrl('/api/capture/process'), {
-        method: 'POST',
-        body: formData
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        // If the backend returns a description/message, stop recording and play Morse
-        if (data.message && recordingRef.current) {
-            // Note: In a real implementation, we'd check for a specific field like 'description'
-            // For now, let's simulate a response if we get a valid payload
-            console.log('✅ Backend Response:', data);
-            stopRecordingAndPlayMorse(data.message || "OK"); 
+      
+        // Send as JSON with Base64 to match Spring Boot Backend
+        const response = await fetch(getApiUrl('/api/analysis/image'), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            image: image.base64String,
+            detailLevel: infoLevel
+          })
+        });
+  
+        if (response.ok) {
+          const data = await response.json();
+          // Backend returns { "description": "text..." }
+          if (data.description && recordingRef.current) {
+              console.log('✅ Backend Response:', data);
+              stopRecordingAndPlayMorse(data.description); 
+          }
         }
       }
     } catch (e) {
-      console.error('Upload error', e);
+      console.error('❌ Camera/Upload Error:', e);
+      setStatus('Error: Camera not responding');
     }
   };
 
