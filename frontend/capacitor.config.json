@@ -2,9 +2,20 @@
   "appId": "com.example.app",
   "appName": "hackathon",
   "webDir": "out",
+  "server": {
+    "allowNavigation": ["10.0.2.2"],
+    "cleartext": true
+  },
   "plugins": {
     "SplashScreen": {
-      "launchAutoHide": false
+      "launchShowDuration": 3000,
+      "launchAutoHide": false,
+      "backgroundColor": "#ffffff",
+      "androidSplashResourceName": "splash",
+      "androidScaleType": "CENTER_CROP",
+      "showSpinner": true,
+      "androidSpinnerStyle": "large",
+      "spinnerColor": "#999999"
     }
   }
 }
